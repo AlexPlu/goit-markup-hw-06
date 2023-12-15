@@ -509,6 +509,7 @@ h2 {
 }
 
 .modal-container {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -697,4 +698,238 @@ input[type="checkbox"]:checked + label span {
   text-align: center;
   margin: 0 auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.menu-toggle svg {
+  fill: #2e2f42;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #mobile-menu .close-btn {
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  #mobile-menu .close-btn:hover,
+  #mobile-menu .close-btn:focus {
+    background-color: #404bbf;
+    border-color: #404bbf;
+    fill: #ffffff;
+  }
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  background-color: #ffffff;
+  z-index: 1;
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu li:first-child {
+  margin-top: 40px;
+}
+
+.mobile-menu .link {
+  display: block;
+  margin-bottom: 40px;
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.mobile-menu li a.mobile-menu-active {
+  color: #404bbf;
+}
+
+.mobile-menu li a:hover,
+.mobile-menu li a:focus {
+  color: #404bbf;
+}
+
+.mobile-contacts-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.mobile-contacts-items li a {
+  list-style: none;
+  color: currentColor;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.mobile-contacts-items li:first-child {
+  color: #4d5ae5;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+}
+
+.menu-container .social-links {
+  justify-content: space-between;
+}
+
+.mobile-contacts-items li:last-child {
+  color: #434455;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .navbar-list,
+  .contacts {
+    display: none;
+  }
+
+  .footer-inner-wrapper,
+  .subscribe-form,
+  .team-list,
+  .portfolio-list,
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-menu {
+    justify-content: space-between;
+  }
+
+  .features-list {
+    gap: 72px;
+  }
+
+  .features-list li {
+    width: 100%;
+  }
+
+  .feature-icon-container {
+    display: none;
+  }
+
+  .features-list-item .section-item-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11em;
+    letter-spacing: 0.02em;
+  }
+
+  .features-list-item .section-item-text {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .team-list-item {
+    width: 264px;
+  }
+
+  .portfolio-list-item {
+    width: 288px;
+  }
+
+  .footer-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .footer-icon-container .logo {
+    margin-right: 0;
+  }
+
+  .footer-text,
+  .social-media-title,
+  .subscribe-text {
+    text-align: center;
+  }
+
+  .footer-inner-wrapper {
+    gap: 72px;
+  }
+
+  .subscribe-container {
+    margin-left: 0;
+  }
+
+  .portfolio-img-wrapper img {
+    object-fit: cover;
+  }
+
+  .hero-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 112px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-background-mobile.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-background-mobile@2x.jpg);
+    }
+  }
 }
