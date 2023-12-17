@@ -838,6 +838,13 @@ input[type="checkbox"]:checked + label span {
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
+  .main-page-header {
+    position: fixed;
+    z-index: 1;
+    background: #ffffff;
+    width: 100vw;
+  }
+
   .navbar-list,
   .contacts {
     display: none;
